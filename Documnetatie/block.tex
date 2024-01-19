@@ -1,0 +1,26 @@
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}[auto, node distance=1cm,>=latex']
+  
+      % Componente inițiale
+      \node [draw, rectangle, node distance=4cm, minimum height=1cm] (componenta1) {Senzor ultrasonic};
+      \node [draw, rectangle, below of=componenta1, node distance=2cm, minimum height=1cm] (componenta2) {Senzor ultrasonic};
+  
+      % Componenta mare
+      \node [draw, rectangle, right of=componenta1, minimum height=4cm, node distance=5cm, yshift=-1cm] (componenta_mare) {Arduino UNO};
+  
+      % Componente mici
+      \node [draw, rectangle, right of=componenta_mare, minimum width=2cm, minimum height=1cm, node distance=5cm, yshift=2cm] (componenta3) {LCD};
+      \node [draw, rectangle, below of=componenta3, minimum width=2cm, minimum height=1cm, node distance=3cm, yshift=1cm] (componenta4) {Buzzer};
+      \node [draw, rectangle, below of=componenta4, minimum width=2cm, minimum height=1cm, , node distance=3cm, yshift=1cm] (componenta5) {LED};
+  
+      % Linii de legatura
+      \draw [->] (componenta1) -- (componenta_mare);
+      \draw [->] (componenta2) -- (componenta_mare);
+      \draw [->] (componenta_mare) -- (componenta3);
+      \draw [->] (componenta_mare) -- (componenta4);
+      \draw [->] (componenta_mare) -- (componenta5);
+  
+    \end{tikzpicture}
+    \caption{Schemă bloc}
+  \end{figure}
